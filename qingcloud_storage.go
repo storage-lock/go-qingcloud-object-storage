@@ -4,8 +4,7 @@ import (
 	"context"
 
 	s3_storage "github.com/storage-lock/go-s3-storage"
-	"github.com/storage-lock/go-storage"
-)
+	)
 
 // QingCloudStorage 青云对象存储实现 (S3兼容)
 type QingCloudStorage struct {
@@ -22,10 +21,7 @@ func NewQingCloudStorage(ctx context.Context, options *s3_storage.S3StorageOptio
 
 const StorageName = "qingcloud-storage"
 
+
 func (x *QingCloudStorage) GetName() string {
 	return StorageName
-}
-
-func (x *QingCloudStorage) Capabilities() []storage.StorageCapability {
-	return x.S3Storage.Capabilities()
 }
